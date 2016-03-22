@@ -1,0 +1,25 @@
+﻿.page-header-ex {
+    padding-bottom: 9px;
+    margin: 20px 0 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-header-ex:first-child {
+    margin: 0 0 12px;
+    border-bottom: 1px dotted #e2e2e2;
+}
+
+.page-header-ex:first-child > h1 {
+    padding: 0;
+    margin: 0 8px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #2679b5;
+}
+
+.page-header-ex:first-child > h1 > small {
+    margin: 0 6px;
+    font-size: 14px;
+    color: #8089a0;
+    font-weight: normal;
+}

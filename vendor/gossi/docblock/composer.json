@@ -1,0 +1,29 @@
+{
+	"name" : "gossi/docblock",
+	"type" : "library",
+	"description" : "PHP Docblock parser and generator. An API to read and write Docblocks.",
+	"license" : "MIT",
+	"keywords" : [
+		"docblock",
+		"parser",
+		"generator"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"gossi\\docblock\\" : "src"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"gossi\\docblock\\tests\\" : "tests"
+		}
+	},
+	"require" : {
+		"php" : ">=5.4",
+		"phootwork/collection" : "~1"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~4",
+		"sami/sami" : "~1"
+	}
+}

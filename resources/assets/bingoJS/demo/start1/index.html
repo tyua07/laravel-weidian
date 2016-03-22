@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>start1</title>
+    <script src="../scripts/jquery-1.8.1.min.js"></script>
+    <script src="../scripts/bingo.js"></script>
+    <script src="scripts/index.js"></script>
+</head>
+<body bg-action="actionMain">
+    <div>
+        <a href="javascript:void(0)" bg-click="listType('userList')">用户列表</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="javascript:void(0)" bg-click="listType('roleList')">角色列表</a>
+    </div>
+    <div bg-if="listType | eq:'userList'">
+        <div bg-action="userListAction" style="display: none;">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>用户</th>
+                    <th>角色</th>
+                </tr>
+                <tbody bg-render="item in list">
+                    <tr>
+                        <td>{{: item.id}}</td>
+                        <td>{{: item.name | text}}</td>
+                        <td>{{: item.role | text}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div bg-if="listType | eq:'roleList'">
+        <div bg-action="roleListAction" style="display: none;">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>角色</th>
+                    <th>描述</th>
+                </tr>
+                <tbody bg-render="item in list">
+                    <tr>
+                        <td>{{: item.id}}</td>
+                        <td>{{: item.name | text}}</td>
+                        <td>{{: item.desc | text}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.idea/
+.svn
+/storage/
+config/database.php
+config/oauth.php

@@ -1,0 +1,64 @@
+﻿<div bg-action="action/home/table" style="display:none;">
+
+    <div class="page-header-ex position-relative">
+        <h1>Tables <small><i class="icon-double-angle-right"></i>演示列表生成与操作</small></h1>
+    </div>
+    <!--/page-header-->
+
+    <div class="row-fluid">
+        <!-- PAGE CONTENT BEGINS HERE -->
+        <div class="row-fluid">
+            <div class="span12">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="center">
+                                <label>
+                                    <input type="checkbox" /><span class="lbl"></span></label>
+                            </th>
+                            <th>Domain</th>
+                            <th>Price</th>
+                            <th class="hidden-480">Clicks</th>
+                            <th class="hidden-phone"><i class="icon-time hidden-phone"></i>Update</th>
+                            <th class="hidden-480">Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody bg-render="item in list">
+                        <tr>
+                            <td class='center'>
+                                <label>
+                                    <input type='checkbox' /><span class="lbl"></span></label>
+                            </td>
+                            <td><a href='javascript:void(0)'
+                                bg-click="edit(item)">{{: item.Domain | text}}</a></td>
+                            <td>{{: item.Price}}</td>
+                            <td class='hidden-480'>{{: item.Clicks}}</td>
+                            <td class='hidden-phone'>{{: item.Update}}</td>
+                            <td class='hidden-480'><span class='label {{: item.st}}'>{{: item.Status | text}}</span></td>
+                            <td>
+                                <div class="inline position-relative">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-only"></i></button>
+                                    <ul class="dropdown-menu dropdown-icon-only dropdown-light pull-right dropdown-caret dropdown-close">
+                                        <li><a href="javascript:void(0)" class="tooltip-success" data-rel="tooltip" title="修改" data-placement="left"
+                                            bg-click="edit(item)">
+                                            <span class="green"><i class="icon-edit"></i></span></a></li>
+                                        <li><a href="javascript:void(0)" class="tooltip-error" data-rel="tooltip" title="删除" data-placement="left"
+                                            bg-click="del(item)">
+                                            <span class="red"><i class="icon-trash"></i></span></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+
+        <!-- PAGE CONTENT ENDS HERE -->
+    </div>
+    <!--/row-->
+
+</div>

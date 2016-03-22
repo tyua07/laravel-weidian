@@ -1,0 +1,21 @@
+﻿<div bg-action="action/system/users/list" style="display:none;">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>用户</th>
+            <th>角色</th>
+        </tr>
+        <tbody bg-render="item in list">
+            <tr>
+                <td>{{: item.id}}</td>
+                <td>
+                    <a href="javascript:void(0)" bg-click="info(item)">
+                    {{: item.name | text}}
+                    </a>
+                </td>
+                <td>{{: item.role | text}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

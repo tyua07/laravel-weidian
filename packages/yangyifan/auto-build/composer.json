@@ -1,0 +1,16 @@
+{
+    "name": "yangyifan/laravel-auto-build",
+    "description": "自动构建laravel-admin CURD 操作",
+    "license": "MIT",
+    "homepage": "http://blog.womenshuo.com",
+    "authors": [
+        {
+            "name": "yangyifan",
+            "email": "yangyifanphp@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "gossi/php-code-generator": "dev-master"
+    }
+}

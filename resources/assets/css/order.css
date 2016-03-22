@@ -1,0 +1,10 @@
+body{font-family: 微软雅黑 !important}
+.order_title {width: 1247px;overflow: hidden;}
+ul, ol {list-style: none;}
+bar.orange li.current {
+    background-color: #F60;
+}
+.fixed-table-toolbar .search{padding:0;width: auto;}
+.w55{width:60px;height:26px}
+.nav-tabs{margin-bottom:20px;}
+.muted b{font-weight: bold;}

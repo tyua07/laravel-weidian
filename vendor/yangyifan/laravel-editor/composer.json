@@ -1,0 +1,27 @@
+{
+  "name": "yangyifan/laravel-editor",
+  "description": "UEditor for laravel5. Support i18n. UEditor is a Rich Text Web Editor From Baidu.",
+  "keywords": [
+    "laravel"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "yangyifan",
+      "email": "yangyifanphp@gmail.com"
+    }
+  ],
+
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "5.0.*|5.1.x",
+    "qiniu/php-sdk": "7.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yangyifan\\UEditor\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

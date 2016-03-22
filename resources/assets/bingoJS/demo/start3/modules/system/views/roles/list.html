@@ -1,0 +1,21 @@
+﻿<div bg-action="action/system/roles/list" style="display:none;">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>角色</th>
+            <th>描述</th>
+        </tr>
+        <tbody bg-render="item in list">
+            <tr>
+                <td>{{: item.id}}</td>
+                <td>
+                    <a href="javascript:void(0)" bg-click="info(item)">
+                    {{: item.name | text}}
+                    </a>
+                </td>
+                <td>{{: item.desc | text}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

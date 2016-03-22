@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>bindDataModel</title>
+    <script src="scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="scripts/bingo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //定义action1
+        var action1 = bingo.action(function ($view, $model, $subs) {
+
+            //定义user model
+            $view.user = $model({
+                name: '张三',
+                age: 20
+            });
+
+            setTimeout(function () {
+
+                //设置user值
+                $view.user.formObject({
+                    name: '李四',
+                    age: 23
+                });
+
+            }, 1000);
+
+            //返回JS object
+            var user = $view.user.toObject();
+
+            //$view.user.name是一个variable变量
+            $view.user.name.$subs(function (value) { });
+
+            //也可以使用$subs观察
+            $subs(function () { return $view.user; }, function (value) {
+
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <!--与action1连接, 形成一个新view-->
+    <div bg-action="action1">
+        姓名:{{user.name}}, 年龄:{{user.age}}
+    </div>
+</body>
+</html>

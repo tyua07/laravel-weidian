@@ -1,0 +1,1 @@
+<input type="hidden" name="<?php echo $schema['name'] ;?>" value="<?php echo $schema['default'] ;?>" class="form-control" />

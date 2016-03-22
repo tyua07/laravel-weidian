@@ -1,0 +1,12 @@
+/**
+ */
+class aaa {
+
+	/**
+	 * @param HtmlBuilderController $html_builder 构造方法
+	 */
+	public function __construct(HtmlBuilderController $html_builder) {
+		parent::__construct();
+		 $this->html_builder = $html_builder;
+	}
+}

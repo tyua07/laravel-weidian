@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>bindDataVariable</title>
+    <script src="scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="scripts/bingo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //定义action1
+        var action1 = bingo.action(function ($view, $var, $subs) {
+
+            $view.userName = $var('张三'); //等效于bingo.variable('', null, $view);
+            
+            setTimeout(function () {
+
+                //修改userName值
+                $view.userName('李四');
+
+            }, 1000);
+
+
+            //读取userName值
+            var test = $view.userName();
+
+            //观察是否有改变
+            $view.userName.$subs(function (value) {
+            });
+
+            //观察是否有赋值(不论有没改变)
+            $view.userName.$assign(function (value) {
+            });
+
+            //可以改变get/set
+            $view.userName.$set(function (value) { this.value = value; });
+            $view.userName.$get(function () { return this.value; });
+
+            //也可以使用$subs观察
+            $subs(function () { return $view.userName; }, function (value) {
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!--与action1连接, 形成一个新view-->
+    <div bg-action="action1">
+        姓名:{{userName}}
+    </div>
+</body>
+</html>

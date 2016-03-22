@@ -1,0 +1,23 @@
+﻿contorller --> action(OK)
+withData问题, 只能一个withData, 可以用{item:null, itemChild:'', ite:[]}方式(withDataList未处理)
+command(Ok)
+
+今天开始处理
+view.ready(所有下级ready同步)(OK)
+
+try/catch(OK)
+
+所有基础factroy放在一起(ok)
+
+filter(ok)
+
+重构command(ok)
+
+text setComplie(ok)
+variable sub问题(ok)
+
+测试command(ok)
+
+textTag行为 (ok)
+view添加filter?
+command, filter, factory 支持module

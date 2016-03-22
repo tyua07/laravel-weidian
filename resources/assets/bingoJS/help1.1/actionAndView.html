@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>actionAndView</title>
+    <script src="scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="scripts/bingo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //定义action1
+        var action1 = bingo.action(function ($view) {
+            //$view为传入的视图
+
+            //向view定义一个变量time
+            $view.time = new Date().toString();
+
+            //向view定义一个方法updateTime
+            $view.updateTime = function () {
+                $view.time = new Date().toString();
+            };
+
+        });
+    </script>
+</head>
+<body>
+    <!--与action1连接, 形成一个新view-->
+    <div bg-action="action1">
+        <div>
+            <!--time-->
+            {{time}}
+        </div>
+        <!--绑定updateTime单击事件-->
+        <input type="button" value="刷新时间"
+            bg-click="updateTime" />
+    </div>
+</body>
+</html>

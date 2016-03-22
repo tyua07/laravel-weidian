@@ -1,0 +1,14 @@
+[ 2016-02-20T12:24:45+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /usr/local/nginx/html/haojiazhang/app/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Your password has expired. To log in you must change it using a client that supports expired passwords. /usr/local/nginx/html/haojiazhang/app/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [8] Use of undefined constant IS_AJAX - assumed 'IS_AJAX' /usr/local/nginx/html/haojiazhang/app/Application/Common/Common/api.php 第 42 行.
+
+[ 2016-02-20T12:24:45+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /usr/local/nginx/html/haojiazhang/app/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Your password has expired. To log in you must change it using a client that supports expired passwords. /usr/local/nginx/html/haojiazhang/app/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [8] Use of undefined constant IS_AJAX - assumed 'IS_AJAX' /usr/local/nginx/html/haojiazhang/app/Application/Common/Common/api.php 第 42 行.
+

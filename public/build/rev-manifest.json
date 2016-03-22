@@ -1,0 +1,23 @@
+{
+  "dist/base.css": "dist/base-f83bbe3d.css",
+  "dist/base.js": "dist/base-ad50cb56.js",
+  "dist/main.js": "dist/main-d11c5303.js",
+  "dist/builder_update.css": "dist/builder_update-075f3161.css",
+  "dist/builder_update.js": "dist/builder_update-a118fe2e.js",
+  "dist/builder_list.css": "dist/builder_list-6f73bf84.css",
+  "dist/builder_list.js": "dist/builder_list-3d69cad4.js",
+  "dist/builder_tab.css": "dist/builder_tab-2f07f064.css",
+  "dist/builder_tab.js": "dist/builder_tab-ada0544e.js",
+  "dist/builder_tree.css": "dist/builder_tree-4ad4e3bf.css",
+  "dist/builder_tree.js": "dist/builder_tree-dedb2951.js",
+  "dist/goods_order.css": "dist/goods_order-dfc66f5c.css",
+  "dist/multi_upload_image.js": "dist/multi_upload_image-ca442f61.js",
+  "dist/email.css": "dist/email-bacf1848.css",
+  "dist/upload_image_dialog.css": "dist/upload_image_dialog-2c4589dc.css",
+  "dist/upload_image_dialog.js": "dist/upload_image_dialog-3d76ad76.js",
+  "dist/login.css": "dist/login-c5b63a19.css",
+  "dist/login.js": "dist/login-8934104c.js",
+  "dist/weidian/category.js": "dist/weidian/category-01ee76d2.js",
+  "dist/weidian/goods.js": "dist/weidian/goods-0dbac505.js",
+  "dist/weidian/goodsSku.js": "dist/weidian/goodsSku-84b5dbf3.js"
+}

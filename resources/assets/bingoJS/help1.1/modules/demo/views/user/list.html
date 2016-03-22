@@ -1,0 +1,13 @@
+﻿<div bg-action="action/demo/user/list">
+    {{: title}}
+    <div bg-for="item in userList">
+        <div>
+            <span>{{: item.id}}</span>
+            <span>{{: item.name}}</span>
+            <span>
+                <input type="button" value="查看"
+                       bg-click="showForm(item)" />
+            </span>
+        </div>
+    </div>
+</div>

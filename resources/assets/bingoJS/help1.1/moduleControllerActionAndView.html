@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>模块化开发</title>
+    <script src="scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="scripts/bingo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //定义demo模块
+        bingo.module('demo', function () {
+
+            //定义user控制器
+            bingo.controller('user', function () {
+
+                //向user控制器定义userInfo
+                this.userInfo = bingo.variable(null);
+
+                //定义user/list action
+                bingo.action('list', function ($view) {
+
+                    //定义用户列表
+                    $view.userList = [{ id: 1, name: '张三' }, { id: 2, name: '李四' }];
+
+                    //取得当前controller(user控制器)
+                    var controller = this.conroller;
+                    //定义改变user方法
+                    $view.changeUser = function (user) {
+                        //设置新的user到controller.userInfo
+                        controller.userInfo(user);
+                    };
+                });
+
+                //定义user/info action
+                bingo.action('info', function ($view, $subs) {
+                    
+                    //定义$view要显示的变量
+                    $view.userId = '';
+                    $view.userName = '';
+
+                    //取得当前controller(user控制器)
+                    var conroller = this.conroller;
+
+                    //观察conroller.userInfo
+                    $subs(function () { return conroller.userInfo; }, function (userInfo) {
+                        //观察到conroller.userInfo改变, 将数据显示
+                        $view.userId = userInfo.id;
+                        $view.userName = userInfo.name;
+                    });
+
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <!--与demo/user/list连接, 形成一个新view-->
+    <div bg-action="action/demo/user/list">
+        <div bg-for="item in userList">
+            <span>{{: item.id}}</span>
+            <span>{{: item.name}}</span>
+            <span>
+                <input type="button" value="查看"
+                       bg-click="changeUser(item)" />
+            </span>
+        </div>
+    </div>
+
+    <!--与demo/user/info, 形成一个新view-->
+    <div bg-action="action/demo/user/info">
+        <div>
+            <span>当前用户信息: </span>
+            <span>id: {{userId}}</span>
+            <span>name: {{userName}}</span>
+        </div>
+    </div>
+</body>
+</html>

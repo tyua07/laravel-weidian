@@ -1,0 +1,5 @@
+.git
+.svn
+.DS_Store
+vendor
+output

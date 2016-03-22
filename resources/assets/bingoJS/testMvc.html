@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!--<script src="../js/jquery/2/jquery-2.1.1.js"></script>-->
+    <script src="js/jquery/jquery-1.8.1.js"></script>
+    <!--<script src="../js/jquery/jquery-1.8.1.min.js"></script>-->
+    <script src="js/other/JSON.js"></script>
+
+    <script src="js/bingo/console.js"></script>
+    <script src="js/bingo/core.js"></script>
+    <script src="js/bingo/datavalue.js"></script>
+    <script src="js/bingo/Event.js"></script>
+    <script src="js/bingo/variable.js"></script>
+    <script src="js/bingo/Class.js"></script>
+    <script src="js/bingo/linq.js"></script>
+    <script src="js/bingo/equals.js"></script>
+    <script src="js/bingo/fetch.js"></script>
+    <script src="js/bingo/package.js"></script>
+    <script src="js/bingo/route.js"></script>
+    <script src="js/bingo/cache.js"></script>
+
+    <script src="js/bingo/mv/linkToDom.js"></script>
+    <script src="js/bingo/mv/module.js"></script>
+    <script src="js/bingo/mv/factory.js"></script>
+    <script src="js/bingo/mv/model.js"></script>
+    <script src="js/bingo/mv/observer.js"></script>
+    <script src="js/bingo/mv/ajax.js"></script>
+    <script src="js/bingo/mv/compiles.js"></script>
+    <script src="js/bingo/mv/view.js"></script>
+    <script src="js/bingo/mv/filter.js"></script>
+    <script src="js/bingo/mv/render.js"></script>
+
+    <script src="js/bingo/mv/factory/base.js"></script>
+    <script src="js/bingo/mv/factory/linq.js"></script>
+    <script src="js/bingo/mv/factory/location.js"></script>
+    <script src="js/bingo/mv/factory/render.js"></script>
+    <script src="js/bingo/mv/factory/timeout.js"></script>
+
+    <script src="js/bingo/mv/command/action.js"></script>
+    <script src="js/bingo/mv/command/attrs.js"></script>
+    <script src="js/bingo/mv/command/event.js"></script>
+    <script src="js/bingo/mv/command/for.js"></script>
+    <script src="js/bingo/mv/command/route.js"></script>
+    <script src="js/bingo/mv/command/html.js"></script>
+    <script src="js/bingo/mv/command/if.js"></script>
+    <script src="js/bingo/mv/command/include.js"></script>
+    <script src="js/bingo/mv/command/model.js"></script>
+    <script src="js/bingo/mv/command/styles.js"></script>
+    <script src="js/bingo/mv/command/text.js"></script>
+
+    <script src="js/bingo/mv/filter/base.js"></script>
+    
+    <script src="test/lib.js"></script>
+    
+    <!--<script src="test/viewTest.js"></script>-->
+    <!--<script src="test/viewReport.js"></script>-->
+    <!--<script src="test/viewVar.js"></script>-->
+
+    <script src="test/viewCommand.js"></script>
+    <script src="test/viewRoute .js"></script>
+</head>
+<body>
+
+    <!--viewTest=========================================-->
+    <!--<div bg-action="action1">
+        <span bg-text="text"></span>
+        {{text}}
+        <div bg-action="action2">
+            <span bg-text="text"></span>
+            {{text}}
+        </div>
+        <div bg-action="actionChild">
+            <span bg-text="text"></span>
+            {{text}}
+        </div>
+    </div>-->
+    <!--viewTest end-->
+
+    <!--viewReport========================================-->
+    <!--<div bg-action="actionReport1">
+        <span bg-text="text"></span>
+        {{text}}
+        <div bg-action="actionReport2">
+            <span bg-text="text"></span>
+            {{text}}
+            <input type="button" value="删除" bg-click="click" />
+        </div>
+        <div bg-action="actionReportChild">
+            <span bg-text="text"></span>
+            {{text}}
+        </div>
+    </div>-->
+    <!--viewReport end-->
+
+    <!--viewVar========================================-->
+    <!--<div bg-action="actionVar">
+        <div bg-text="v"></div>
+        <div bg-text="var1"></div>
+        <div bg-text="m.a"></div>
+        <div bg-text="m.b"></div>
+    </div>-->
+    <!--viewVar end-->
+
+    <!--viewCommand========================================-->
+    <div bg-action="actionCommand">
+
+        <div> ===================== </div>
+        <div>input：<input bg-model="input" /></div>
+        <div>input：<input value="{{input}}" dd="{{input}}" /></div>
+        <div>textTag Text：<span>{{textTag | text}}</span></div>
+        <div>textTag：<span>{{textTag}}</span></div>
+        <div>textTag readonly：<span>{{:textTag}}</span></div>
+        <div>text：<span bg-text="text"></span></div>
+        <div>html：<span bg-html="html"></span></div>
+        <div>attrValue：<input bg-attr="{value:input}" /></div>
+
+        <style type="text/css">
+            .testRed {
+                color:red;
+            }
+            .testBlue {
+                color: blue;
+            }
+        </style>
+
+
+        <div> ===================== </div>
+        <div>checked：<label><input bg-checked="checkVal" type="checkbox" />点击这里改变状态</label></div>
+        <div>prop：<input bg-prop="{checked:checkVal}" type="checkbox" /></div>
+        <div>disabled：<input bg-disabled="checkVal" /></div>
+        <div>readonly：<input bg-readonly="checkVal" /></div>
+        <div>show：<span bg-show="checkVal" bg-text="text" ></span></div>
+        <div>hide：<span bg-hide="checkVal" bg-text="input" ></span></div>
+        <div>visible：<span bg-visible="checkVal" bg-text="input" ></span></div>
+        <div>if：
+            <span bg-if="checkVal">真</span>
+            <span bg-if="checkVal | not">假,{{input}}</span>
+        </div>
+        <div> ================ </div>
+        <div>src：<img bg-src="src" /></div>
+        <div>
+            class：<span bg-class="clsName" bg-text="text" ></span>
+            <select bg-model="clsName">
+                <option value="testRed">红</option><option value="testBlue">蓝</option>
+            </select>
+        </div>
+        <div>
+            style-width：<input bg-model="styWidth" />可以修改宽度
+            <div style="height:10px;background-color:red;" bg-style="{width:styWidth}"></div>
+        </div>
+        <div>
+            bg-select：
+            <select bg-select="selectTest">
+                <option value="{{: item.id}}">{{: item.text | text}}</option>
+            </select>
+        </div>
+        <div>
+            bg-select-as：
+            <select bg-select-as="selectTest">
+                <option value="{{: item.id}}">{{: item.text | text}}</option>
+            </select>
+        </div>
+
+        <div> =====事件=========== </div>
+        <div>
+            <div><input type="button" value="点我" bg-click="clickMe1" /> 点击:{{clickCount1}}次</div>
+            <div><input type="button" value="点我" bg-click="clickMe2()" /> 点击:{{clickCount2}}次</div>
+            <div><input type="button" value="点我" bg-event="{click:clickMe3}" /> 点击:{{clickCount3}}次</div>
+        </div>
+
+
+        <div> =====model=========== </div>
+        <div>
+            <div>input：<input type="text" bg-model="datas.input" /></div>
+            <div>
+                select：<select bg-model="datas.select">
+                    <option value="1">1111</option>
+                    <option value="2">2222</option>
+                </select>
+            </div>
+            <div>textarea：<textarea bg-model="datas.text"></textarea></div>
+            <div>
+                checkVal：<input type="checkbox" bg-model="datas.checkVal" value="1" />
+            </div>
+            <div>
+                checked：<input type="checkbox" bg-checked="datas.checked" />
+            </div>
+            <div>
+                radio：<input type="radio" name="cmdRadio" value="0"  bg-model="datas.radio" />
+                <input type="radio" name="cmdRadio" value="1"  bg-model="datas.radio" />
+            </div>
+
+            <div><input type="button" value="结果" bg-click="reportData" />{{dataRes}}</div>
+        </div>
+
+
+        <div> ==for============== </div>
+        <div bg-for="item in forList">
+            <script type="text/html">
+                {{header}}Header| {{/header}}
+                {{footer}} |Footer{{/footer}}
+                {{loading}}loading{{/loading}}
+                {{empty}}empty{{/empty}}
+                <div>{{: item_index}}/{{: item_count}}, first:{{: item_first}}, last:{{: item_last}},
+                    odd:{{: item_odd}}, even:{{: item_even}},
+                    item.a:{{: item.a}}, item.b:{{: item.b}},
+                    data:{{: $data.item == item}}, hasView:{{: !bingo.isNull($view)}}
+                    <input type="button" value="test" bg-click="forItemClick(item)" />
+                    [
+                    {{for cItem in item.items}}
+                        {{header}}<input type="button" value="header" bg-click="forItemClick(item)" />{{/header}}
+                        {{if cItem_odd}}
+                            <input type="button" value="{{: cItem}}" bg-click="forItemClick(cItem, item)" />
+                        {{/if}}
+                        {{footer}}<input type="button" value="footer" bg-click="forItemClick(item, $parent)" />{{/footer}}
+                    {{/for}}
+                    <input type="button" value="end" bg-click="forItemClick(item)" />
+                    ]
+                </div>
+            </script>
+        </div>
+
+
+        <div> ==for tmplId============== </div>
+        <!--使用tmpl-id属性从fortmpl1取模板内容-->
+        <div bg-for="item in [1,2,3 ] | take:[0,1] tmpl=#fortmpl1">
+        </div>
+        <!--使用for语句从fortmpl1取模板内容-->
+        <div bg-for="mItem in {list:[4,2,3] }">
+            {{for item in mItem.list | take:[1] tmpl=#fortmpl1 /}}
+        </div>
+        <!--fortmpl1取模-->
+        <script type="text/html" id="fortmpl1">
+            {{: item}},
+        </script>
+
+
+        <div> ==for tmpl url============== </div>
+        <!--使用tmpl-id属性从fortmpl1取模板内容-->
+        <div bg-for="item in [2,1,3] | asc tmpl=test/tmpl/for.html">
+        </div>
+        <!--使用for语句从fortmpl1取模板内容-->
+        <div bg-for="mItem in {list:[1,2,3]}">
+            <!--#aaaaa--><!--bbbb-->
+            {{for item in mItem.list tmpl=test/tmpl/for.html /}}
+        </div>
+
+
+        <div> ==include============== </div>
+        <div>include：<span bg-include="test/tmpl/include.html"></span></div>||
+        <helloInclude>helloInclude</helloInclude>
+        <helloReplace></helloReplace>
+        <helloUrl></helloUrl>
+        <div> ================ </div>
+
+        
+        <!--script 只能读取，IE8及以下版本不支持写入，所以最好用于模板，和replace为true标签-->
+        <script type="text/html" bg-miniTable>
+            <columns>
+                <item formator="dddd">aaa</item>
+                <item formator="dddd" name="bbb" text="aaa">bbb</item>
+            </columns>
+        </script>
+    <script type="text/html" bg-html="input">
+            
+        </script>
+
+    </div>
+    <!--viewCommand end111-->
+    <!--viewCommand end-->
+
+    <div >
+        <div><a href="#{{: bingo.routeLink('view', {controller:'user', action:'form1'})}}" bg-target="main">to form1</a>    <a href="#view/user/form2" bg-target="main">to form2</a></div>
+        <div bg-route="view/user/form1" bg-name="main"
+            bg-route-load="function(url){ console.log('load', this.queryParams(), this);}"></div>
+    </div>
+</body>
+</html>
