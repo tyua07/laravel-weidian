@@ -285,14 +285,14 @@ class GoodsModel extends BaseModel
     }
 
     /**
-     * 获得全部应该更新到微店的商品分类
+     * 获得全部应该更新到微店的商品
      *
      * @return mixed
      * @author yangyifan <yangyifanphp@gmail.com>
      */
-    public static function getAllShoudUpdateCategory()
+    public static function getAllShoudUpdateGoods()
     {
-        return self::multiwhere(['is_sync' => 1])->get();
+        return self::multiwhere(['is_sync' => 1, 'itemid' => ['>', 0]])->get();
     }
 
     /**

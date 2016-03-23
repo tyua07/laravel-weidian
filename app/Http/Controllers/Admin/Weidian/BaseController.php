@@ -153,7 +153,7 @@ class BaseController extends \App\Http\Controllers\Admin\BaseController
      * @author yangyifan <yangyifanphp@gmail.com>
      */
     protected function parseResponse($response)
-    {
+    {   dd($response);
         $response = json_decode($response, true);
 
         if ($response['status_code'] == 0 ) {

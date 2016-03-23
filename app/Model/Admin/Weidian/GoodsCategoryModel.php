@@ -122,7 +122,7 @@ class GoodsCategoryModel extends BaseModel
      * @return mixed
      * @author yangyifan <yangyifanphp@gmail.com>
      */
-    public static function getGoodsAllCateId($goods_id)
+    public static function getGoodsAllCateinfo($goods_id)
     {
         if ( $goods_id > 0 ) {
             $goods_table_name               = tableName('weidian_goods');
@@ -130,9 +130,9 @@ class GoodsCategoryModel extends BaseModel
             $goods_category_table_name      = tableName('weidian_category_goods');
 
             return  self::multiwhere([ 'g.id' => $goods_id])->
-            join($category_table_name . ' AS c', $goods_category_table_name . '.category_id', '=', 'c.id')->
-            join($goods_table_name . ' AS g', $goods_category_table_name . '.goods_id', '=', 'g.id')->
-            lists('c.cate_id');
+                    join($category_table_name . ' AS c', $goods_category_table_name . '.category_id', '=', 'c.id')->
+                    join($goods_table_name . ' AS g', $goods_category_table_name . '.goods_id', '=', 'g.id')->
+                    lists('c.cate_id');
         }
     }
 

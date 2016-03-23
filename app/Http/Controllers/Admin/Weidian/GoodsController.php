@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\HtmlBuilderController;
 use App\Model\Admin\Weidian\GoodsCategoryModel;
 use App\Model\Admin\Weidian\GoodsDescModel;
 use App\Model\Admin\Weidian\GoodsImageModel;
+use App\Model\Admin\Weidian\GoodsSKUModel;
 use App\Observer\Weidian\GoodsObserver;
 use App\Observer\Weidian\GoodsDescObserver;
 use Illuminate\Http\Request;
@@ -217,6 +218,10 @@ class GoodsController extends BaseController
         return $this->response(self::ERROR_STATE_CODE, '拉取微店信息失败');
     }
 
+    public function getA()
+    {
+        $this->updateGoods();
+    }
     /**
      * 同步商品数据
      *
@@ -277,20 +282,21 @@ class GoodsController extends BaseController
     private function updateGoods()
     {
         //获得全部需要更新到微店的商品
-        $all_goods = GoodsModel::getAllShoudUpdateCategory();
+        $all_goods = GoodsModel::getAllShoudUpdateGoods();
 
         if ( count($all_goods) > 0 ) {
             foreach ($all_goods as $goods) {
-                $result = $this->send(self::GET_API_URL, [
+                $result = $this->sendUpdate(self::GET_API_URL, [
                     'param'     => json_encode([
                         'item_name'         => $goods->item_name,
                         'price'             => $goods->price,
                         'stock'             => $goods->stock,
                         'merchant_code'     => $goods->merchant_code,
                         'itemid'            => $goods->itemid,
-                        'cate_ids'          => json_encode(GoodsCategoryModel::getGoodsAllCateId($goods->id)),
+                        'cate_ids'          => GoodsCategoryModel::getGoodsAllCateinfo($goods->id),
+                        'skus'              => GoodsSKUModel::getAllIsSyncGoodsSku($goods->id),
                     ]),
-                    'public'    => '{"method":"vdian.item.update"}',
+                    'public'    => 'vdian.item.update',
                 ]);
                 $result = true;
                 if ($result !== false ) {

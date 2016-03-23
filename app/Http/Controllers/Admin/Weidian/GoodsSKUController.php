@@ -233,7 +233,7 @@ class GoodsSKUController extends BaseController
 
                         if ( $goods_id > 0 ) {
                             foreach ($response as $sku_info) {
-                                GoodsSKUModel::multiwhere( ['goods_id' => $goods_id] )->update([
+                                GoodsSKUModel::updateNotIsSync( ['goods_id' => $goods_id] )->update([
                                     'sku_id'    => $sku_info['id'],
                                     'is_sync'   => 2,//更新为不需要同步状态
                                 ]);

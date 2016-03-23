@@ -101,6 +101,9 @@ class GoodsSKUModel extends BaseModel
             foreach ($goods_sku_arr as $goods_sku) {
                 $status = self::addGoodsSKU($goods_id, $goods_sku);
 
+                //更新SKU为不需要同步
+                self::updateNotIsSync($goods_sku['id']);
+
                 if ( $status == false ) {
                     return false;
                 }
@@ -226,7 +229,7 @@ class GoodsSKUModel extends BaseModel
     public static function getAllIsSyncGoodsSku($goods_id)
     {
         if ( $goods_id > 0 ) {
-            return  self::multiwhere(['goods_id' => $goods_id])->
+            return  self::multiwhere(['goods_id' => $goods_id, 'status' => ['IN', [1, 2], 'is_sync' => 1, 'sku_id' => ['>', 0] ]])->
                     select(['sku_id AS id', 'title', 'price', 'stock', 'sku_merchant_code'])->
                     get();
         }
